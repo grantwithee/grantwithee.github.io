@@ -1,135 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Grant Withee</title>
-    <meta name="description" content="Grant Withee — portfolio" />
-    <link rel="stylesheet" href="assets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Grant Withee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: #0b0c10;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
-  <body>
-    <header class="wrap">
-      <nav class="nav">
-        <a class="logo" href="#">Grant Withee</a>
-        <div class="links">
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </header>
+    .container {
+      max-width: 720px;
+      margin: auto;
+    }
 
-    <main class="wrap">
-      <section class="hero">
-        <h1>Hi, I’m Grant.</h1>
-        <p class="sub">
-          I build engineering projects and enjoy solving messy problems with clean systems.
-        </p>
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
 
-        <div class="cta">
-          <a class="btn" href="#projects">View projects</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
-        </div>
+    p {
+      color: #9ca3af;
+      margin-top: 0;
+    }
 
-        <ul class="meta">
-          <li>UVA • Electrical Engineering</li>
-          <li>Interests: embedded systems, optimization, data</li>
-        </ul>
-      </section>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
 
-      <section id="projects" class="section">
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>Selected work. Keep it short and link out.</p>
-        </div>
+    li {
+      margin-bottom: 14px;
+    }
 
-        <div class="grid">
-          <article class="card">
-            <h3>Micro-drone (scratch build)</h3>
-            <p>Custom control stack, IMU filtering, hardware-first approach.</p>
-            <div class="card-links">
-              <a href="#" aria-label="Project link">Details</a>
-              <a href="#" aria-label="Code link">Code</a>
-            </div>
-          </article>
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-          <article class="card">
-            <h3>Synthesizer (discrete circuits)</h3>
-            <p>BJT op-amp design, filters, and audio signal chain.</p>
-            <div class="card-links">
-              <a href="#">Report</a>
-              <a href="#">Schematic</a>
-            </div>
-          </article>
+    a:hover {
+      text-decoration: underline;
+    }
 
-          <article class="card">
-            <h3>Optimization / scheduling models</h3>
-            <p>MILP + dynamic programming projects for real constraints and tradeoffs.</p>
-            <div class="card-links">
-              <a href="#">Write-up</a>
-              <a href="#">Code</a>
-            </div>
-          </article>
-        </div>
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
 
-        <p class="hint">
-          Tip: replace the <code>#</code> links above with your GitHub repos, PDFs, or Notion pages.
-        </p>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="section-title">
-          <h2>Experience</h2>
-          <p>Short bullets, outcomes first.</p>
-        </div>
-
-        <div class="stack">
-          <div class="row">
-            <div>
-              <h3>Role / Organization</h3>
-              <p class="muted">City, State • Dates</p>
-            </div>
-            <ul>
-              <li>Did a thing that mattered, measured by a result.</li>
-              <li>Built/optimized/designed X that improved Y.</li>
-            </ul>
-          </div>
-
-          <div class="row">
-            <div>
-              <h3>Role / Organization</h3>
-              <p class="muted">City, State • Dates</p>
-            </div>
-            <ul>
-              <li>Kept this tight. Two bullets is enough.</li>
-              <li>Link to resume if you want.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Make it easy for people to reach you.</p>
-        </div>
-
-        <div class="contact">
-          <a class="pill" href="mailto:you@email.com">you@email.com</a>
-          <a class="pill" href="https://github.com/grantwithee" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="pill" href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="pill" href="assets/Grant_Withee_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>© <span id="y"></span> Grant Withee</p>
-      </footer>
-    </main>
-
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
+<body>
+  <div class="container">
+    <h1>Grant Withee</h1>
+    <p>Electrical Eng
