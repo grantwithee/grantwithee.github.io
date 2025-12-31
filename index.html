@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grant Withee — Project Portfolio</title>
+
   <style>
     :root{
       --bg:#ffffff;
@@ -12,10 +13,12 @@
       --muted:#555555;
       --line:#e6e6e6;
       --link:#0b5fff;
-      --max: 900px;
+      --max: 1000px;
       --radius: 14px;
     }
+
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -24,56 +27,158 @@
       line-height: 1.55;
       padding: 44px 18px;
     }
-    .wrap{ width: min(var(--max), 92vw); margin: 0 auto; }
-    h1{ margin: 0 0 12px; font-size: clamp(2rem, 3.5vw, 2.6rem); }
-    .sub{ margin: 0 0 28px; color: var(--muted); max-width: 78ch; }
 
-    .list{ display:flex; flex-direction:column; gap:14px; margin-top: 10px; }
-    .item{
+    .wrap{
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
+    }
+
+    h1{
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+    }
+
+    .sub{
+      margin: 0 0 36px;
+      color: var(--muted);
+      max-width: 80ch;
+    }
+
+    /* PROJECT GRID */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .project{
+      display:block;
       border:1px solid var(--line);
-      background: var(--panel);
       border-radius: var(--radius);
-      padding: 16px 18px;
+      overflow:hidden;
+      text-decoration:none;
+      color: inherit;
+      background: var(--panel);
+      transition: box-shadow .15s ease, transform .15s ease;
+    }
+
+    .project:hover{
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      transform: translateY(-2px);
+    }
+
+    /* FIXED IMAGE SIZE */
+    .thumb{
+      width:100%;
+      height: 240px;              /* <-- controls uniform size */
+      background: #ffffff;
+    }
+
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit: contain;        /* keeps full model visible */
+      display:block;
+    }
+
+    .info{
+      padding: 14px 16px;
       display:flex;
-      justify-content:space-between;
+      justify-content: space-between;
       align-items:center;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .title{ font-weight: 750; }
-    a{ color: var(--link); text-decoration:none; font-weight: 700; }
-    a:hover{ text-decoration: underline; }
+
+    .title{
+      font-weight: 750;
+    }
+
+    .cta{
+      color: var(--link);
+      font-weight: 700;
+    }
+
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+      .thumb{
+        height: 260px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <h1>Grant Withee’s Project Portfolio</h1>
     <p class="sub">
       Hi, I’m Grant, a third-year student at the University of Virginia pursuing a double major in electrical and computer engineering.
-      I’m interested in hardware design, embedded systems, and rf/microwave circuits and am focused 
+      I’m interested in hardware design, embedded systems, and rf circuits. I have done a handful of PCB schematics/layouts for various 
+      reasons such as personal projects, clubs, internships, and more. I wanted a place to display some of my work so I created this
+      website which is still a work in progress. 
     </p>
 
-    <div class="list">
-      <div class="item">
-        <div class="title">Remote Motor Control and Telemetry Board (Schematic Only)</div>
-        <a href="remote_motor_control.html">View project →</a>
-      </div>
+    <section class="grid">
 
-      <div class="item">
-        <div class="title">Discrete Transistor Op-Amp and Relaxation Oscillator Board</div>
-        <a href="synthesizer_bjt_opamp.html">View project →</a>
-      </div>
+      <!-- Remote Motor Control -->
+      <a class="project" href="remote_motor_control.html">
+        <div class="thumb">
+          <img src="projects/remote_motor_control/model.jpg"
+               alt="Remote motor control 3D board model">
+        </div>
+        <div class="info">
+          <div class="title">
+            Remote Motor Control and Telemetry Board (Schematic Only)
+          </div>
+          <div class="cta">View project →</div>
+        </div>
+      </a>
 
-      <div class="item">
-        <div class="title">Bluetooth-Enabled Drone Control Board</div>
-        <a href="teeny_drone.html">View project →</a>
-      </div>
+      <!-- Synthesizer -->
+      <a class="project" href="synthesizer_bjt_opamp.html">
+        <div class="thumb">
+          <img src="projects/synthesizer_bjt_opamp/model.jpg"
+               alt="Discrete transistor op-amp 3D board model">
+        </div>
+        <div class="info">
+          <div class="title">
+            Discrete Transistor Op-Amp and Relaxation Oscillator Board
+          </div>
+          <div class="cta">View project →</div>
+        </div>
+      </a>
 
-      <div class="item">
-        <div class="title">Timing Pulse Synchronization Board</div>
-        <a href="timing_synch.html">View project →</a>
-      </div>
-    </div>
+      <!-- Teeny Drone -->
+      <a class="project" href="teeny_drone.html">
+        <div class="thumb">
+          <img src="projects/teeny_drone/model.jpg"
+               alt="Bluetooth-enabled drone control board 3D model">
+        </div>
+        <div class="info">
+          <div class="title">
+            Bluetooth-Enabled Drone Control Board
+          </div>
+          <div class="cta">View project →</div>
+        </div>
+      </a>
+
+      <!-- Timing Synchronization -->
+      <a class="project" href="timing_synch.html">
+        <div class="thumb">
+          <img src="projects/timing_synch/model.jpg"
+               alt="Timing pulse synchronization board 3D model">
+        </div>
+        <div class="info">
+          <div class="title">
+            Timing Pulse Synchronization Board
+          </div>
+          <div class="cta">View project →</div>
+        </div>
+      </a>
+
+    </section>
   </div>
 </body>
 </html>
