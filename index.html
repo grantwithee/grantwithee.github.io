@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grant Withee — Portfolio</title>
+  <title>Grant Withee — Project Portfolio</title>
   <style>
     :root{
       --bg:#ffffff;
@@ -24,75 +24,57 @@
       line-height: 1.55;
       padding: 44px 18px;
     }
-    .wrap{ width:min(var(--max), 92vw); margin:0 auto; }
-    h1{ margin:0 0 8px; font-size: clamp(2rem, 3.5vw, 2.6rem); }
-    .sub{ margin:0 0 22px; color: var(--muted); }
+    .wrap{ width: min(var(--max), 92vw); margin: 0 auto; }
+    h1{ margin: 0 0 12px; font-size: clamp(2rem, 3.5vw, 2.6rem); }
+    .sub{ margin: 0 0 28px; color: var(--muted); max-width: 78ch; }
 
-    .list{ display:flex; flex-direction:column; gap:12px; margin-top: 16px; }
+    .list{ display:flex; flex-direction:column; gap:14px; margin-top: 10px; }
     .item{
       border:1px solid var(--line);
       background: var(--panel);
       border-radius: var(--radius);
-      padding: 14px 16px;
+      padding: 16px 18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .title{ font-weight: 700; }
-    a{ color: var(--link); text-decoration:none; font-weight: 650; }
+    .title{ font-weight: 750; }
+    a{ color: var(--link); text-decoration:none; font-weight: 700; }
     a:hover{ text-decoration: underline; }
-
-    footer{
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .95rem;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Grant Withee</h1>
-    <p class="sub">Hardware projects: PCB design, embedded systems, and circuit schematics.</p>
+    <h1>Grant Withee’s Project Portfolio</h1>
+    <p class="sub">
+      Hi, I’m Grant, a third-year student at the University of Virginia pursuing a degree in electrical and computer engineering.
+      I’m interested in hardware design, embedded systems, and signal processing, with a focus on PCB design, low-power electronics,
+      and the interface between software and physical systems. :contentReference[oaicite:0]{index=0}
+    </p>
 
     <div class="list">
       <div class="item">
-        <div class="title">Remote Motor Control</div>
+        <div class="title">Remote Motor Control and Telemetry Board (Schematic Only)</div>
         <a href="remote_motor_control.html">View project →</a>
       </div>
+
       <div class="item">
-        <div class="title">Synthesizer (BJT Op-Amp)</div>
+        <div class="title">Discrete Transistor Op-Amp and Relaxation Oscillator Board</div>
         <a href="synthesizer_bjt_opamp.html">View project →</a>
       </div>
+
       <div class="item">
-        <div class="title">Teeny Drone</div>
+        <div class="title">Bluetooth-Enabled Drone Control Board</div>
         <a href="teeny_drone.html">View project →</a>
       </div>
+
       <div class="item">
-        <div class="title">Timing Synchronization</div>
+        <div class="title">Timing Pulse Synchronization Board</div>
         <a href="timing_synch.html">View project →</a>
       </div>
     </div>
-
-    <footer>
-      <div>
-        <a href="https://github.com/grantwithee" target="_blank" rel="noreferrer">GitHub</a>
-        <span> • </span>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-      <div>© <span id="y"></span> Grant Withee</div>
-    </footer>
   </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
