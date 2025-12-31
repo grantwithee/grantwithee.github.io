@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timing Synchronization — Grant Withee</title>
+  <style>
+    :root{--bg:#fff;--panel:#f5f5f7;--text:#111;--muted:#555;--line:#e6e6e6;--link:#0b5fff;--max:980px;--radius:14px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.55;padding:44px 18px;}
+    .wrap{width:min(var(--max),92vw);margin:0 auto;}
+    a{color:var(--link);text-decoration:none;font-weight:650;}
+    a:hover{text-decoration:underline;}
+    header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+    h1{margin:0;font-size:clamp(1.6rem,3vw,2.1rem);}
+    .sub{margin:8px 0 0;color:var(--muted);max-width:70ch;}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px;}
+    .card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);overflow:hidden;}
+    .card img{width:100%;height:auto;display:block;background:#fff;}
+    .cap{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.95rem;}
+    .btnrow{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);text-decoration:none;font-weight:700;}
+    .btn:hover{border-color:rgba(11,95,255,.35);}
+    footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem;}
+    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr;}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Timing Synchronization</h1>
+        <p class="sub">PCB + 3D model + schematic.</p>
+      </div>
+      <div><a href="index.html">← Back to all projects</a></div>
+    </header>
+
+    <div class="btnrow">
+      <a class="btn" href="projects/timing_synch/schematic.pdf" target="_blank" rel="noreferrer">Open schematic (PDF)</a>
+      <a class="btn" href="projects/timing_synch/board.jpg" target="_blank" rel="noreferrer">Open board image</a>
+      <a class="btn" href="projects/timing_synch/model.jpg" target="_blank" rel="noreferrer">Open 3D model image</a>
+    </div>
+
+    <section class="grid">
+      <div class="card">
+        <img src="projects/timing_synch/board.jpg" alt="Timing synchronization board photo" loading="lazy">
+        <div class="cap"><span>Board photo</span><a href="projects/timing_synch/board.jpg" target="_blank" rel="noreferrer">Open</a></div>
+      </div>
+
+      <div class="card">
+        <img src="projects/timing_synch/model.jpg" alt="Timing synchronization 3D board model" loading="lazy">
+        <div class="cap"><span>3D model render</span><a href="projects/timing_synch/model.jpg" target="_blank" rel="noreferrer">Open</a></div>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Grant Withee</footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
