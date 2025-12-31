@@ -1,79 +1,289 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grant Withee</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grant Withee — Portfolio</title>
+  <meta name="description" content="Hardware portfolio featuring PCB builds, schematics, and 3D board models." />
+
   <style>
-    body {
+    :root{
+      --bg:#0b0c10;
+      --panel:#11131a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:#222635;
+      --link:#93c5fd;
+      --max: 980px;
+      --radius: 14px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: #ffffff;
-      color: #000000;
-      margin: 0;
-      padding: 40px 20px;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 44px 18px;
     }
 
-    .container {
-      max-width: 720px;
-      margin: auto;
+    .wrap{
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.25rem;
+    header{
+      margin-bottom: 32px;
     }
 
-    p {
-      color: #9ca3af;
-      margin-top: 0;
+    h1{
+      margin: 0 0 6px;
+      font-size: clamp(1.9rem, 3.5vw, 2.4rem);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 2rem;
+    .sub{
+      margin:0;
+      color: var(--muted);
+      max-width: 70ch;
     }
 
-    li {
-      margin-bottom: 14px;
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin-top: 28px;
     }
 
-    a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 500;
+    .card{
+      grid-column: span 12;
+      border: 1px solid var(--line);
+      background: rgba(17,19,26,.85);
+      border-radius: var(--radius);
+      padding: 16px;
     }
 
-    a:hover {
+    .card h2{
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+
+    .thumbs{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .thumb{
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0f1117;
+    }
+
+    .thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .cap{
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: .95rem;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    a:hover{
       text-decoration: underline;
     }
 
-    footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #6b7280;
+    .actions{
+      margin-top: 6px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:650;
+    }
+
+    .btn:hover{
+      border-color: rgba(147,197,253,.6);
+    }
+
+    footer{
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (min-width: 860px){
+      .card{ grid-column: span 6; }
+      .thumbs{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Grant Withee</h1>
-    <p>Electrical Engineering Student • Project portfolio</p>
+  <div class="wrap">
+    <header>
+      <h1>Grant Withee</h1>
+      <p class="sub">
+        Hardware projects including PCB design, embedded systems, and circuit schematics.
+      </p>
+    </header>
 
-    <ul>
-      <li><a href="project1.pdf" target="_blank">Project 1 (PDF)</a></li>
-      <li><a href="project2.pdf" target="_blank">Project 2 (PDF)</a></li>
-      <li><a href="project3.pdf" target="_blank">Project 3 (PDF)</a></li>
-      <li><a href="resume.pdf" target="_blank">Resume (PDF)</a></li>
-    </ul>
+    <section class="grid">
+
+      <!-- Remote Motor Control -->
+      <article class="card">
+        <h2>Remote Motor Control</h2>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="projects/remote_motor_control/board.jpg" alt="Remote motor control board">
+            <div class="cap">
+              <span>Board photo</span>
+              <a href="projects/remote_motor_control/board.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+
+          <div class="thumb">
+            <img src="projects/remote_motor_control/model.jpg" alt="Remote motor control 3D model">
+            <div class="cap">
+              <span>3D model</span>
+              <a href="projects/remote_motor_control/model.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="projects/remote_motor_control/schematic.pdf" target="_blank">
+            View schematic (PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- Synthesizer -->
+      <article class="card">
+        <h2>Synthesizer (BJT Op-Amp)</h2>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="projects/synthesizer_bjt_opamp/board.jpg" alt="Synthesizer board">
+            <div class="cap">
+              <span>Board photo</span>
+              <a href="projects/synthesizer_bjt_opamp/board.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+
+          <div class="thumb">
+            <img src="projects/synthesizer_bjt_opamp/model.jpg" alt="Synthesizer 3D model">
+            <div class="cap">
+              <span>3D model</span>
+              <a href="projects/synthesizer_bjt_opamp/model.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="projects/synthesizer_bjt_opamp/schematic.pdf" target="_blank">
+            View schematic (PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- Teeny Drone -->
+      <article class="card">
+        <h2>Teeny Drone</h2>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="projects/teeny_drone/board.jpg" alt="Teeny drone board">
+            <div class="cap">
+              <span>Board photo</span>
+              <a href="projects/teeny_drone/board.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+
+          <div class="thumb">
+            <img src="projects/teeny_drone/model.jpg" alt="Teeny drone 3D model">
+            <div class="cap">
+              <span>3D model</span>
+              <a href="projects/teeny_drone/model.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="projects/teeny_drone/schematic.pdf" target="_blank">
+            View schematic (PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- Timing Synchronization -->
+      <article class="card">
+        <h2>Timing Synchronization</h2>
+
+        <div class="thumbs">
+          <div class="thumb">
+            <img src="projects/timing_synch/board.jpg" alt="Timing synchronization board">
+            <div class="cap">
+              <span>Board photo</span>
+              <a href="projects/timing_synch/board.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+
+          <div class="thumb">
+            <img src="projects/timing_synch/model.jpg" alt="Timing synchronization 3D model">
+            <div class="cap">
+              <span>3D model</span>
+              <a href="projects/timing_synch/model.jpg" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="projects/timing_synch/schematic.pdf" target="_blank">
+            View schematic (PDF)
+          </a>
+        </div>
+      </article>
+
+    </section>
 
     <footer>
-      <p>
-        <a href="https://github.com/grantwithee">GitHub</a> •
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-      </p>
+      <div>
+        <a href="https://github.com/grantwithee" target="_blank">GitHub</a>
+        <span> • </span>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      </div>
+      <div style="margin-top:8px;">
+        © <span id="year"></span> Grant Withee
+      </div>
     </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
