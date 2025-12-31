@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Viewer</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --panel:#f6f7f9;
+      --text:#0b0c0f;
+      --muted:#5b6472;
+      --line:#e6e8ee;
+      --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+      --link:#0b5fff;
+      --max: 1100px;
+      --radius: 16px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 56px 18px;
+    }
+    .wrap{ width:min(var(--max),92vw); margin:0 auto; }
+
+    header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items:center;
+      margin-bottom: 18px;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+      letter-spacing: -0.02em;
+    }
+    .back{
+      justify-self:end;
+      color: var(--link);
+      text-decoration:none;
+      font-weight: 750;
+      white-space: nowrap;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .back:hover{ border-color: rgba(11,95,255,.25); box-shadow: var(--shadow); }
+
+    .frame{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .imgwrap{
+      background: #fff;
+      padding: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    img{
+      max-width: 100%;
+      max-height: calc(100vh - 210px);
+      width: auto;
+      height: auto;
+      display:block;
+    }
+    .meta{
+      padding: 12px 14px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: .98rem;
+    }
+    .meta a{ color: var(--link); font-weight: 750; text-decoration:none; }
+    .meta a:hover{ text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 id="title">Image</h1>
+      <a class="back" href="javascript:history.back()">← Back</a>
+    </header>
+
+    <div class="frame">
+      <div class="imgwrap">
+        <img id="img" alt="">
+      </div>
+      <div class="meta">
+        <div id="path"></div>
+        <div><a id="openRaw" target="_blank" rel="noreferrer">Open raw image</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get("src");
+    const title = params.get("title") || "Image";
+
+    const img = document.getElementById("img");
+    const t = document.getElementById("title");
+    const path = document.getElementById("path");
+    const openRaw = document.getElementById("openRaw");
+
+    if (!src) {
+      t.textContent = "Image not found";
+      path.textContent = "Missing src parameter.";
+    } else {
+      t.textContent = title;
+      img.src = src;
+      img.alt = title;
+      path.textContent = src;
+      openRaw.href = src;
+    }
+  </script>
+</body>
+</html>
