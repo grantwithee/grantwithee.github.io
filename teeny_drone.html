@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bluetooth-Enabled Drone Control Board</title>
+  <title>Bluetooth Drone Control Board</title>
   <style>
-    :root{--bg:#fff;--panel:#f6f7f9;--text:#0b0c0f;--muted:#5b6472;--line:#e6e8ee;--link:#0b5fff;--radius:16px;--max:1040px;}
+    :root{
+      --bg:#fff;--panel:#f6f7f9;--text:#0b0c0f;--muted:#5b6472;
+      --line:#e6e8ee;--link:#0b5fff;--radius:16px;--max:1040px;
+    }
     *{box-sizing:border-box;}
-    body{margin:0;font-family:system-ui;padding:56px 18px;background:var(--bg);color:var(--text);}
+    body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text);padding:56px 18px;}
     .wrap{width:min(var(--max),92vw);margin:0 auto;}
     header{display:grid;grid-template-columns:1fr auto;gap:14px;margin-bottom:18px;}
     h1{margin:0;font-size:2rem;}
-    .back{padding:10px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--link);font-weight:750;}
+    .back{padding:10px 14px;border:1px solid var(--line);border-radius:999px;
+          text-decoration:none;color:var(--link);font-weight:750;}
     .grid{display:grid;grid-template-columns:1fr;gap:18px;}
     .tile{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;}
     .media{height:280px;display:flex;align-items:center;justify-content:center;padding:10px;}
-    .media img{width:100%;height:100%;object-fit:contain;display:block;}
-    .meta{background:var(--panel);padding:14px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .media img{width:100%;height:100%;object-fit:contain;}
+    .meta{background:var(--panel);padding:14px 16px;display:flex;justify-content:space-between;}
     @media(min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr;}}
   </style>
 </head>
@@ -28,27 +32,18 @@
   </header>
 
   <section class="grid">
-    <!-- 1) schematic -->
-    <a class="tile" href="projects/teeny_drone/schematic.pdf" target="_blank" rel="noreferrer">
-      <div class="media">
-        <img src="projects/teeny_drone/schematic.jpg" alt="Schematic preview">
-      </div>
-      <div class="meta"><strong>Schematic</strong><span>Open PDF →</span></div>
+    <a class="tile" href="pdf_viewer.html?src=projects/teeny_drone/schematic.pdf&title=Schematic">
+      <div class="media"><img src="projects/teeny_drone/schematic.jpg"></div>
+      <div class="meta"><strong>Schematic</strong><span>View →</span></div>
     </a>
 
-    <!-- 2) board -->
     <a class="tile" href="viewer.html?src=projects/teeny_drone/board.jpg&title=Board">
-      <div class="media">
-        <img src="projects/teeny_drone/board.jpg" alt="Board photo">
-      </div>
+      <div class="media"><img src="projects/teeny_drone/board.jpg"></div>
       <div class="meta"><strong>Board</strong><span>View →</span></div>
     </a>
 
-    <!-- 3) model -->
     <a class="tile" href="viewer.html?src=projects/teeny_drone/model.jpg&title=Model">
-      <div class="media">
-        <img src="projects/teeny_drone/model.jpg" alt="3D model render">
-      </div>
+      <div class="media"><img src="projects/teeny_drone/model.jpg"></div>
       <div class="meta"><strong>Model</strong><span>View →</span></div>
     </a>
   </section>
