@@ -14,13 +14,40 @@
     .wrap{width:min(var(--max),92vw);margin:0 auto;}
     header{display:grid;grid-template-columns:1fr auto;gap:14px;margin-bottom:18px;}
     h1{margin:0;font-size:2rem;}
-    .back{padding:10px 14px;border:1px solid var(--line);border-radius:999px;
-          text-decoration:none;color:var(--link);font-weight:750;}
+    .back{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      text-decoration:none;
+      color:var(--link);
+      font-weight:750;
+    }
     .grid{display:grid;grid-template-columns:1fr;gap:18px;}
-    .tile{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;}
-    .media{height:280px;display:flex;align-items:center;justify-content:center;padding:10px;}
-    .media img{width:100%;height:100%;object-fit:contain;}
-    .meta{background:var(--panel);padding:14px 16px;display:flex;justify-content:space-between;}
+    .tile{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#fff;
+    }
+    .media{
+      height:280px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .meta{
+      background:var(--panel);
+      padding:14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
   </style>
 </head>
 <body>
@@ -32,19 +59,27 @@
 
   <section class="grid">
     <!-- Schematic -->
-    <a class="tile" href="pdf_viewer.html?src=projects/remote_motor_control/schematic.pdf&title=Schematic">
+    <a class="tile"
+       href="pdf_viewer.html?src=projects/remote_motor_control/schematic.pdf&title=Schematic">
       <div class="media">
         <img src="projects/remote_motor_control/schematic.jpg" alt="Schematic preview">
       </div>
-      <div class="meta"><strong>Schematic</strong><span>View →</span></div>
+      <div class="meta">
+        <strong>Schematic</strong>
+        <span>View →</span>
+      </div>
     </a>
 
-    <!-- Model -->
-    <a class="tile" href="viewer.html?src=projects/remote_motor_control/model.jpg&title=Model">
+    <!-- System Block Diagram (was Model) -->
+    <a class="tile"
+       href="viewer.html?src=projects/remote_motor_control/model.jpg&title=System%20Block%20Diagram">
       <div class="media">
-        <img src="projects/remote_motor_control/model.jpg" alt="3D model">
+        <img src="projects/remote_motor_control/model.jpg" alt="System block diagram">
       </div>
-      <div class="meta"><strong>Model</strong><span>View →</span></div>
+      <div class="meta">
+        <strong>System Block Diagram</strong>
+        <span>View →</span>
+      </div>
     </a>
   </section>
 </div>
