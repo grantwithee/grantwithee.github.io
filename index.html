@@ -8,13 +8,15 @@
   <style>
     :root{
       --bg:#ffffff;
-      --panel:#f5f5f7;
-      --text:#111111;
-      --muted:#555555;
-      --line:#e6e6e6;
+      --surface:#ffffff;
+      --panel:#f6f7f9;
+      --text:#0b0c0f;
+      --muted:#5b6472;
+      --line:#e6e8ee;
+      --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
       --link:#0b5fff;
-      --max: 1000px;
-      --radius: 14px;
+      --max: 1040px;
+      --radius: 16px;
     }
 
     *{ box-sizing:border-box; }
@@ -24,8 +26,8 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
-      padding: 44px 18px;
+      line-height: 1.6;
+      padding: 56px 18px;
     }
 
     .wrap{
@@ -34,21 +36,23 @@
     }
 
     h1{
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      margin: 0 0 10px;
+      font-size: clamp(2.1rem, 3.6vw, 2.8rem);
+      letter-spacing: -0.02em;
     }
 
     .sub{
       margin: 0 0 36px;
       color: var(--muted);
-      max-width: 80ch;
+      max-width: 85ch;
+      font-size: 1.05rem;
     }
 
-    /* PROJECT GRID */
     .grid{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 22px;
+      margin-top: 18px;
     }
 
     .project{
@@ -58,54 +62,62 @@
       overflow:hidden;
       text-decoration:none;
       color: inherit;
-      background: var(--panel);
-      transition: box-shadow .15s ease, transform .15s ease;
+      background: var(--surface);
+      box-shadow: none;
+      transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
     }
 
     .project:hover{
-      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      box-shadow: var(--shadow);
       transform: translateY(-2px);
+      border-color: rgba(11,95,255,.22);
     }
 
-    /* FIXED IMAGE SIZE */
+    /* uniform thumbnail size */
     .thumb{
       width:100%;
-      height: 240px;              /* <-- controls uniform size */
-      background: #ffffff;
+      height: 240px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
     }
 
     .thumb img{
       width:100%;
       height:100%;
-      object-fit: contain;        /* keeps full model visible */
+      object-fit: contain;
       display:block;
     }
 
+    /* fixed CTA location regardless of title length */
     .info{
-      padding: 14px 16px;
-      display:flex;
-      justify-content: space-between;
+      padding: 16px 16px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
       align-items:center;
-      gap: 12px;
-      flex-wrap: wrap;
+      background: var(--panel);
     }
 
     .title{
       font-weight: 750;
+      letter-spacing: -0.01em;
     }
 
     .cta{
+      justify-self:end;
       color: var(--link);
-      font-weight: 700;
+      font-weight: 750;
+      white-space: nowrap;
     }
 
-    @media (min-width: 900px){
-      .grid{
-        grid-template-columns: 1fr 1fr;
-      }
-      .thumb{
-        height: 260px;
-      }
+    @media (min-width: 920px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .thumb{ height: 260px; }
+      .info{ padding: 16px 18px; }
     }
   </style>
 </head>
@@ -116,65 +128,47 @@
     <p class="sub">
       Hi, I’m Grant, a third-year student at the University of Virginia pursuing a double major in electrical and computer engineering.
       I have done a handful of PCB schematics and layouts for various projects and wanted a place to display some of my work.
-      
-      
       This website is still a work in progress and only contains a small portion of projects I have worked on, enjoy!
     </p>
 
     <section class="grid">
 
-            <!-- Teeny Drone -->
       <a class="project" href="teeny_drone.html">
         <div class="thumb">
-          <img src="projects/teeny_drone/model.jpg"
-               alt="Bluetooth-enabled drone control board 3D model">
+          <img src="projects/teeny_drone/model.jpg" alt="Bluetooth-enabled drone control board 3D model">
         </div>
         <div class="info">
-          <div class="title">
-            Bluetooth-Enabled Drone Control Board
-          </div>
+          <div class="title">Bluetooth-Enabled Drone Control Board</div>
           <div class="cta">View project →</div>
         </div>
       </a>
 
-      <!-- Synthesizer -->
       <a class="project" href="synthesizer_bjt_opamp.html">
         <div class="thumb">
-          <img src="projects/synthesizer_bjt_opamp/model.jpg"
-               alt="Discrete transistor op-amp 3D board model">
+          <img src="projects/synthesizer_bjt_opamp/model.jpg" alt="Discrete transistor op-amp 3D board model">
         </div>
         <div class="info">
-          <div class="title">
-            Discrete Transistor Op-Amp and Relaxation Oscillator Board
-          </div>
+          <div class="title">Discrete Transistor Op-Amp &amp; Relaxation Oscillator Board</div>
           <div class="cta">View project →</div>
         </div>
       </a>
 
-            <!-- Remote Motor Control -->
       <a class="project" href="remote_motor_control.html">
         <div class="thumb">
-          <img src="projects/remote_motor_control/schematic.jpg"
-               alt="Remote motor control 3D board model">
+          <img src="projects/remote_motor_control/schematic.jpg" alt="Remote motor control schematic preview">
         </div>
         <div class="info">
-          <div class="title">
-            Remote Motor Control & Telemetry (Schematic Only)
-          </div>
+          <div class="title">Remote Motor Control &amp; Telemetry (Schematic Only)</div>
           <div class="cta">View project →</div>
         </div>
       </a>
 
-      <!-- Timing Synchronization -->
       <a class="project" href="timing_synch.html">
         <div class="thumb">
-          <img src="projects/timing_synch/model.jpg"
-               alt="Timing pulse synchronization board 3D model">
+          <img src="projects/timing_synch/model.jpg" alt="Timing pulse synchronization board 3D model">
         </div>
         <div class="info">
-          <div class="title">
-            Timing Pulse Synchronization Board
-          </div>
+          <div class="title">Timing Pulse Synchronization Board</div>
           <div class="cta">View project →</div>
         </div>
       </a>

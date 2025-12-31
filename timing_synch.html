@@ -4,43 +4,157 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Timing Pulse Synchronization Board — Grant Withee</title>
+
   <style>
-    :root{--bg:#fff;--text:#111;--muted:#555;--line:#e6e6e6;--link:#0b5fff;--max:1000px;--r:14px;}
-    *{box-sizing:border-box;}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.55;padding:44px 18px;}
-    .wrap{width:min(var(--max),92vw);margin:0 auto;}
-    a{color:var(--link);text-decoration:none;font-weight:700;}
-    a:hover{text-decoration:underline;}
-    header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
-    h1{margin:0;font-size:clamp(1.6rem,3vw,2.1rem);}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;}
-    .card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;}
-    .card img{width:100%;height:auto;display:block;}
-    .cap{padding:10px 12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.95rem;border-top:1px solid var(--line);}
-    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr;}}
+    :root{
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --panel:#f6f7f9;
+      --text:#0b0c0f;
+      --muted:#5b6472;
+      --line:#e6e8ee;
+      --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+      --link:#0b5fff;
+      --max: 1040px;
+      --radius: 16px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 56px 18px;
+    }
+    .wrap{ width:min(var(--max),92vw); margin:0 auto; }
+
+    header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items:start;
+      margin-bottom: 18px;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      letter-spacing: -0.02em;
+    }
+    .back{
+      justify-self:end;
+      color: var(--link);
+      text-decoration:none;
+      font-weight: 750;
+      white-space: nowrap;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .back:hover{ border-color: rgba(11,95,255,.25); box-shadow: var(--shadow); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .tile{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: var(--surface);
+      transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+    }
+    .tile:hover{
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+      border-color: rgba(11,95,255,.22);
+    }
+
+    .media{
+      height: 280px;
+      background:#fff;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit: contain;
+      display:block;
+    }
+
+    .meta{
+      background: var(--panel);
+      padding: 14px 16px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items:center;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+    .label{ font-weight: 700; color: var(--text); }
+    .open{
+      justify-self:end;
+      color: var(--link);
+      text-decoration:none;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .open:hover{ text-decoration: underline; }
+
+    @media (min-width: 980px){
+      .grid{ grid-template-columns: 1fr 1fr 1fr; }
+      .media{ height: 300px; }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
       <h1>Timing Pulse Synchronization Board</h1>
-      <a href="index.html">← Back</a>
+      <a class="back" href="index.html">← Back</a>
     </header>
 
     <section class="grid">
-      <div class="card">
-        <img src="projects/timing_synch/board.jpg" alt="Board photo" loading="lazy">
-        <div class="cap"><span>Board</span><a href="projects/timing_synch/board.jpg" target="_blank" rel="noreferrer">Open</a></div>
-      </div>
+      <!-- 1) schematic (links to PDF) -->
+      <a class="tile" href="projects/timing_synch/schematic.pdf" target="_blank" rel="noreferrer" aria-label="Open schematic PDF">
+        <div class="media">
+          <img src="projects/timing_synch/schematic.jpg" alt="Schematic preview (click to open PDF)" loading="lazy">
+        </div>
+        <div class="meta">
+          <div class="label">Schematic</div>
+          <div class="open">Open PDF →</div>
+        </div>
+      </a>
 
-      <div class="card">
-        <img src="projects/timing_synch/model.jpg" alt="3D model render" loading="lazy">
-        <div class="cap"><span>3D Model</span><a href="projects/timing_synch/model.jpg" target="_blank" rel="noreferrer">Open</a></div>
-      </div>
+      <!-- 2) board -->
+      <a class="tile" href="projects/timing_synch/board.jpg" target="_blank" rel="noreferrer">
+        <div class="media">
+          <img src="projects/timing_synch/board.jpg" alt="Board photo" loading="lazy">
+        </div>
+        <div class="meta">
+          <div class="label">Board</div>
+          <div class="open">Open →</div>
+        </div>
+      </a>
 
-      <a class="card" href="projects/timing_synch/schematic.pdf" target="_blank" rel="noreferrer" aria-label="Open schematic PDF">
-        <img src="projects/timing_synch/schematic.jpg" alt="Schematic preview (click to open PDF)" loading="lazy">
-        <div class="cap"><span>Schematic (preview)</span><span>Open PDF →</span></div>
+      <!-- 3) model -->
+      <a class="tile" href="projects/timing_synch/model.jpg" target="_blank" rel="noreferrer">
+        <div class="media">
+          <img src="projects/timing_synch/model.jpg" alt="3D model render" loading="lazy">
+        </div>
+        <div class="meta">
+          <div class="label">Model</div>
+          <div class="open">Open →</div>
+        </div>
       </a>
     </section>
   </div>
