@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grant Withee — Project Portfolio</title>
+  <title>Grant — Project Portfolio</title>
 
   <style>
     :root{
@@ -44,7 +44,7 @@
     .sub{
       margin: 0 0 36px;
       color: var(--muted);
-      max-width: 85ch;
+      max-width: 80ch;
       font-size: 1.05rem;
     }
 
@@ -63,7 +63,6 @@
       text-decoration:none;
       color: inherit;
       background: var(--surface);
-      box-shadow: none;
       transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
     }
 
@@ -73,7 +72,6 @@
       border-color: rgba(11,95,255,.22);
     }
 
-    /* uniform thumbnail size */
     .thumb{
       width:100%;
       height: 240px;
@@ -92,7 +90,12 @@
       display:block;
     }
 
-    /* fixed CTA location regardless of title length */
+    /* Zoomed-in thumbnail for Bluetooth drone only */
+    .thumb.zoom img{
+      object-fit: cover;
+      transform: scale(1.15);
+    }
+
     .info{
       padding: 16px 16px;
       display:grid;
@@ -124,38 +127,42 @@
 
 <body>
   <div class="wrap">
-    <h1>Grant Withee’s Project Portfolio</h1>
+    <h1>Grant’s Project Portfolio</h1>
     <p class="sub">
-      Hi, I’m Grant, a third-year student at the University of Virginia pursuing a double major in electrical and computer engineering.
-      I have done a handful of PCB schematics and layouts for various projects and wanted a place to display some of my work.
-      This website is still a work in progress and only contains a small portion of projects I have worked on, enjoy!
+      This website is still a work in progress and only contains a small portion of the projects I have worked on, enjoy!
     </p>
 
     <section class="grid">
 
+      <!-- Bluetooth Drone (zoomed) -->
       <a class="project" href="teeny_drone.html">
-        <div class="thumb">
-          <img src="projects/teeny_drone/model.jpg" alt="Bluetooth-enabled drone control board 3D model">
+        <div class="thumb zoom">
+          <img src="projects/teeny_drone/model.jpg"
+               alt="Bluetooth-enabled drone control board 3D model">
         </div>
         <div class="info">
-          <div class="title">Bluetooth-Enabled Drone Control Board</div>
+          <div class="title">Bluetooth Drone Control Board</div>
           <div class="cta">View project →</div>
         </div>
       </a>
 
+      <!-- Synthesizer -->
       <a class="project" href="synthesizer_bjt_opamp.html">
         <div class="thumb">
-          <img src="projects/synthesizer_bjt_opamp/model.jpg" alt="Discrete transistor op-amp 3D board model">
+          <img src="projects/synthesizer_bjt_opamp/model.jpg"
+               alt="Discrete transistor op-amp 3D board model">
         </div>
         <div class="info">
-          <div class="title">Discrete Transistor Op-Amp &amp; Relaxation Oscillator Board</div>
+          <div class="title">Discrete Transistor Op-Amp &amp; Oscillator</div>
           <div class="cta">View project →</div>
         </div>
       </a>
 
+      <!-- Remote Motor Control -->
       <a class="project" href="remote_motor_control.html">
         <div class="thumb">
-          <img src="projects/remote_motor_control/schematic.jpg" alt="Remote motor control schematic preview">
+          <img src="projects/remote_motor_control/schematic.jpg"
+               alt="Remote motor control schematic preview">
         </div>
         <div class="info">
           <div class="title">Remote Motor Control &amp; Telemetry (Schematic Only)</div>
@@ -163,9 +170,11 @@
         </div>
       </a>
 
+      <!-- Timing Synchronization -->
       <a class="project" href="timing_synch.html">
         <div class="thumb">
-          <img src="projects/timing_synch/model.jpg" alt="Timing pulse synchronization board 3D model">
+          <img src="projects/timing_synch/model.jpg"
+               alt="Timing pulse synchronization board 3D model">
         </div>
         <div class="info">
           <div class="title">Timing Pulse Synchronization Board</div>
