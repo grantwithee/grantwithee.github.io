@@ -3,104 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Remote Motor Control — Grant Withee</title>
+  <title>Remote Motor Control and Telemetry Board — Grant Withee</title>
   <style>
-    :root{
-      --bg:#ffffff;
-      --panel:#f5f5f7;
-      --text:#111111;
-      --muted:#555555;
-      --line:#e6e6e6;
-      --link:#0b5fff;
-      --max: 980px;
-      --radius: 14px;
-    }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-      padding: 44px 18px;
-    }
-    .wrap{ width:min(var(--max), 92vw); margin:0 auto; }
-    a{ color: var(--link); text-decoration:none; font-weight: 650; }
-    a:hover{ text-decoration: underline; }
-
-    header{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
-    h1{ margin:0; font-size: clamp(1.6rem, 3vw, 2.1rem); }
-    .sub{ margin:8px 0 0; color: var(--muted); max-width: 70ch; }
-
-    .grid{ display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
-    .card{
-      border:1px solid var(--line);
-      background: var(--panel);
-      border-radius: var(--radius);
-      overflow:hidden;
-    }
-    .card img{ width:100%; height:auto; display:block; background:white; }
-    .cap{
-      padding: 12px 14px;
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .btnrow{ margin-top: 14px; display:flex; gap:12px; flex-wrap:wrap; }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--text);
-      text-decoration:none;
-      font-weight: 700;
-    }
-    .btn:hover{ border-color: rgba(11,95,255,.35); }
-    footer{ margin-top: 34px; padding-top: 18px; border-top:1px solid var(--line); color: var(--muted); font-size:.95rem; }
-    @media (min-width: 900px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
+    :root{--bg:#fff;--text:#111;--muted:#555;--line:#e6e6e6;--link:#0b5fff;--max:1000px;--r:14px;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.55;padding:44px 18px;}
+    .wrap{width:min(var(--max),92vw);margin:0 auto;}
+    a{color:var(--link);text-decoration:none;font-weight:700;}
+    a:hover{text-decoration:underline;}
+    header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+    h1{margin:0;font-size:clamp(1.6rem,3vw,2.1rem);}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;}
+    .card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;}
+    .card img{width:100%;height:auto;display:block;}
+    .cap{padding:10px 12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.95rem;border-top:1px solid var(--line);}
+    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr 1fr;}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div>
-        <h1>Remote Motor Control</h1>
-        <p class="sub">PCB + 3D model + schematic.</p>
-      </div>
-      <div><a href="index.html">← Back to all projects</a></div>
+      <h1>Remote Motor Control and Telemetry Board (Schematic Only)</h1>
+      <a href="index.html">← Back</a>
     </header>
-
-    <div class="btnrow">
-      <a class="btn" href="projects/remote_motor_control/schematic.pdf" target="_blank" rel="noreferrer">Open schematic (PDF)</a>
-      <a class="btn" href="projects/remote_motor_control/board.jpg" target="_blank" rel="noreferrer">Open board image</a>
-      <a class="btn" href="projects/remote_motor_control/model.jpg" target="_blank" rel="noreferrer">Open 3D model image</a>
-    </div>
 
     <section class="grid">
       <div class="card">
-        <img src="projects/remote_motor_control/board.jpg" alt="Remote motor control board photo" loading="lazy">
-        <div class="cap"><span>Board photo</span><a href="projects/remote_motor_control/board.jpg" target="_blank" rel="noreferrer">Open</a></div>
+        <img src="projects/remote_motor_control/board.jpg" alt="Board photo" loading="lazy">
+        <div class="cap"><span>Board</span><a href="projects/remote_motor_control/board.jpg" target="_blank" rel="noreferrer">Open</a></div>
       </div>
 
       <div class="card">
-        <img src="projects/remote_motor_control/model.jpg" alt="Remote motor control 3D board model" loading="lazy">
-        <div class="cap"><span>3D model render</span><a href="projects/remote_motor_control/model.jpg" target="_blank" rel="noreferrer">Open</a></div>
+        <img src="projects/remote_motor_control/model.jpg" alt="3D model render" loading="lazy">
+        <div class="cap"><span>3D Model</span><a href="projects/remote_motor_control/model.jpg" target="_blank" rel="noreferrer">Open</a></div>
       </div>
+
+      <a class="card" href="projects/remote_motor_control/schematic.pdf" target="_blank" rel="noreferrer" aria-label="Open schematic PDF">
+        <img src="projects/remote_motor_control/schematic.jpg" alt="Schematic preview (click to open PDF)" loading="lazy">
+        <div class="cap"><span>Schematic (preview)</span><span>Open PDF →</span></div>
+      </a>
     </section>
-
-    <footer>© <span id="y"></span> Grant Withee</footer>
   </div>
-
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
